@@ -3,8 +3,9 @@
   <div class="media">
     <div class="media__img"><img src="{{item.imageFrontUrl}}" alt="" width="180" height="135" /></div>
     <div class="media__body">
-      <p>{{item.comment}}</p>
-      <table>
+      <p v-if="item.comment">{{item.comment}}</p>
+      <a href="#" v-on="click: accordion">詳細スペック</a>
+      <table v-show="toggle">
         <tr>
           <th>排気量</th>
           <td>{{item.engineCapacity}}cc</td>
