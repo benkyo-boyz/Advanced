@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>vue.js</title>
+  <style type="text/css">
+    [v-cloak] {
+      display: none
+    }
+    body{
+      font: 12px/1.5 Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+      width: 960px;
+      margin: 0 auto;
+    }
+    img {
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+    }
+    .media {
+      overflow: hidden;
+    }
+    .media__img {
+      float: left;
+      margin-right: 20px;
+    }
+    .media__body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="vue-app" v-cloak>
+    <h1>中古車検索</h1>
+    <p>Powered By <a href="http://www.carsensorlab.net/webservice/">Carsensor Lab</a></p>
+    <car-component v-repeat="item: catalogCar" catalog-car="catalogCar"></car-component>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

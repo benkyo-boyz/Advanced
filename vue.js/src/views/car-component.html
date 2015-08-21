@@ -1,0 +1,23 @@
+<div>
+  <h2>{{item.model}}<small> / {{item.brand}}</small></h2>
+  <div class="media">
+    <div class="media__img"><img src="{{item.imageFrontUrl}}" alt="" width="180" height="135" /></div>
+    <div class="media__body">
+      <p>{{item.comment}}</p>
+      <table>
+        <tr>
+          <th>排気量</th>
+          <td>{{item.engineCapacity}}cc</td>
+        </tr>
+        <tr>
+          <th>車体サイズ</th>
+          <td>{{item.bodySize}}</td>
+        </tr>
+        <tr>
+          <th>生産期間</th>
+          <td>{{item.productionPeriod}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

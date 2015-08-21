@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue.js</title>
+  <style type="text/css">
+    [v-cloak] { display: none }
+    body{
+      font: 12px/1.5 Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+    }
+    #viewport {
+      width: 400px;
+      margin: 0 auto;
+    }
+    table {
+      margin-top: 20px;
+      width: 100%;
+    }
+    td, th {
+      padding: 5px 0;
+    }
+    tbody th {
+      text-align: left;
+    }
+    thead th,
+    tbody td {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+
+    <table>
+      <tr>
+        <th>devCost</th>
+        <td><input type="number" v-model="benkyosapuri.devCost" /></td>
+      </tr>
+      <tr>
+        <th>devSavingsCostRate</th>
+        <td><input type="number" v-model="benkyosapuri.devSavingsCostRate" /></td>
+      </tr>
+    </table>
+
+    <table v-cloak>
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>development costs</th>
+          <th>saving costs</th>
+          <th>saving costs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Monthly</th>
+          <td>{{benkyosapuri.devCost | currency '￥'}}円</td>
+          <td>{{benkyosapuri.devCost * benkyosapuri.devSavingsCostRate | currency '￥'}}円</td>
+        </tr>
+        <tr>
+          <th>Quarter</th>
+          <td>{{benkyosapuri.devCost * 3 | currency '￥'}}円</td>
+          <td>{{benkyosapuri.devCost * benkyosapuri.devSavingsCostRate * 3 | currency '￥'}}円</td>
+        </tr>
+        <tr>
+          <th>6 months</th>
+          <td>{{benkyosapuri.devCost * 6 | currency '￥'}}円</td>
+          <td>{{benkyosapuri.devCost * benkyosapuri.devSavingsCostRate * 6 | currency '￥'}}円</td>
+        </tr>
+        <tr>
+          <th>Year</th>
+          <td>{{benkyosapuri.devCost * 12 | currency '￥'}}円</td>
+          <td>{{benkyosapuri.devCost * benkyosapuri.devSavingsCostRate * 12 | currency '￥'}}円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="http://cdn.jsdelivr.net/vue/0.12.8/vue.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.11/vue-resource.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

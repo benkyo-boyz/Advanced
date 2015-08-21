@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue.js</title>
+  <style type="text/css">
+    [v-cloak] { display: none }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+
+    <input type="text" v-model="filterKey">
+
+    <table v-cloak>
+      <thead>
+        <tr>
+          <th v-on="click: onClick('name')">Name</th>
+          <th v-on="click: onClick('country')">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-repeat="brandList
+          | filterBy filterKey
+          | orderBy sortKey">
+          <td><a href="{{catalogUrl}}" target="_blank">{{name}}</a></td>
+          <td>{{country}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="http://cdn.jsdelivr.net/vue/0.12.8/vue.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.11/vue-resource.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
